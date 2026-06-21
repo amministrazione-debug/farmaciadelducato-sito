@@ -1,0 +1,13 @@
+MODULI FORNITORI E LAVORA CON NOI - INVIO EMAIL WEB
+
+Questa versione NON usa mailto.
+I moduli restano graficamente dentro il sito e inviano i dati via web a:
+
+amministrazione@farmaciadelducato.com
+
+Servizio usato: FormSubmit.co
+
+Nota importante: al primo invio FormSubmit può mandare una email di attivazione all’indirizzo amministrazione@farmaciadelducato.com.
+È sufficiente confermare una sola volta. Dopo la conferma, i moduli inviano direttamente le richieste via email.
+
+Non servono Google Sheet, Apps Script, backend o iframe.

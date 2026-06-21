@@ -1,0 +1,16 @@
+MODULI FORNITORI E LAVORA CON NOI - VERSIONE FORMSPREE
+
+I moduli sono già predisposti per invio web tramite Formspree.
+
+ATTENZIONE: per funzionare bisogna sostituire nel file index.html la stringa:
+
+INSERISCI_CODICE_FORMSPREE
+
+con il codice del form creato su Formspree, ad esempio:
+
+https://formspree.io/f/abcd1234
+
+Formspree invierà le email all’indirizzo configurato nell’account, cioè:
+amministrazione@farmaciadelducato.com
+
+Motivo: nessun sito statico può inviare email vere autonomamente senza un servizio esterno o backend.
