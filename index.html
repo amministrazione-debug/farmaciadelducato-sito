@@ -77,26 +77,12 @@ a{text-decoration:none;color:inherit}
   23%{opacity:0;transform:scale(1)}
   100%{opacity:0;transform:scale(1.05)}
 }
-.white-diagonal{display:none}
-  position:absolute;
-  top:0;
-  right:49%;
-  height:100%;
-  width:230px;
-  background:white;
-  transform:skewX(-25deg);
-  z-index:2;
+.white-diagonal{
+  display:none;
 }
 
-.blue-diagonal{display:none}
-  position:absolute;
-  top:0;
-  right:44%;
-  height:100%;
-  width:126px;
-  background:linear-gradient(180deg,#0055C8,#00499B);
-  transform:skewX(-25deg);
-  z-index:3;
+.blue-diagonal{
+  display:none;
 }
 .big-tick{position:absolute;right:-16px;bottom:-36px;width:226px;height:226px;z-index:5;filter:drop-shadow(0 16px 18px rgba(0,0,0,.2))}
 .big-tick:before{content:"";position:absolute;left:22px;top:5px;width:94px;height:172px;border-right:58px solid var(--green);border-bottom:58px solid var(--green);transform:rotate(42deg);border-radius:18px}
@@ -190,6 +176,8 @@ footer{background:white;padding:24px 0}
     width:58%;
   }
 
+}
+
 @media (min-width:1400px){
 
   .hero-copy{
@@ -200,6 +188,8 @@ footer{background:white;padding:24px 0}
   .photo-area{
     width:56%;
   }
+  
+}
 
   .white-diagonal{
     right:30%;
