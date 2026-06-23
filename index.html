@@ -73,7 +73,16 @@ background:#e9eef3;
 z-index:1;
 }
 
-.white-diagonal{display:none}
+.white-diagonal{
+position:absolute;
+top:0;
+right:47%;
+height:100%;
+width:140px;
+background:white;
+transform:skewX(-25deg);
+z-index:3;
+}
 
 .blue-diagonal{position:absolute;top:0;right:52%;height:100%;width:70px;background:linear-gradient(180deg,#0055C8,#00499B);transform:skewX(-25deg);z-index:3}
 .big-tick{position:absolute;right:-16px;bottom:-36px;width:226px;height:226px;z-index:5;filter:drop-shadow(0 16px 18px rgba(0,0,0,.2))}
