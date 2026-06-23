@@ -77,8 +77,27 @@ a{text-decoration:none;color:inherit}
   23%{opacity:0;transform:scale(1)}
   100%{opacity:0;transform:scale(1.05)}
 }
-.white-diagonal{position:absolute;top:0;right:49%;height:100%;width:230px;background:white;transform:skewX(-25deg)}
-.blue-diagonal{position:absolute;top:0;right:44%;height:100%;width:126px;background:linear-gradient(180deg,#0055C8,#00499B);transform:skewX(-25deg)}
+.white-diagonal{
+  position:absolute;
+  top:0;
+  right:49%;
+  height:100%;
+  width:230px;
+  background:white;
+  transform:skewX(-25deg);
+  z-index:2;
+}
+
+.blue-diagonal{
+  position:absolute;
+  top:0;
+  right:44%;
+  height:100%;
+  width:126px;
+  background:linear-gradient(180deg,#0055C8,#00499B);
+  transform:skewX(-25deg);
+  z-index:3;
+}
 .big-tick{position:absolute;right:-16px;bottom:-36px;width:226px;height:226px;z-index:5;filter:drop-shadow(0 16px 18px rgba(0,0,0,.2))}
 .big-tick:before{content:"";position:absolute;left:22px;top:5px;width:94px;height:172px;border-right:58px solid var(--green);border-bottom:58px solid var(--green);transform:rotate(42deg);border-radius:18px}
 .big-tick:after{content:"";position:absolute;left:28px;top:10px;width:82px;height:152px;border-right:18px solid white;border-bottom:18px solid white;transform:rotate(42deg);border-radius:10px}
