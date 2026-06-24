@@ -4,4 +4,8 @@
     <loc>https://farmaciadelducato.it/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://farmaciadelducato.it/privacy.html</loc>
+    <priority>0.2</priority>
+  </url>
 </urlset>
