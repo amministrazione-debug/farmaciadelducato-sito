@@ -36,7 +36,7 @@ a{text-decoration:none;color:inherit}
     gap:10px;
     margin-left:0;
 
-  transform:translateX(-100px);
+  transform:none;
 }
 .vs-mark{width:44px;height:48px;position:relative;display:inline-block;flex:0 0 auto}
 .vs-mark:before{content:"";position:absolute;left:0;bottom:5px;width:20px;height:24px;background:var(--green);transform:skewY(22deg) rotate(-18deg);border-radius:2px}
@@ -4203,10 +4203,6 @@ header.top .top-inner{
   position:relative!important;
 }
 
-header.top .top-inner > a.logo-wrap{
-  transform:translateX(-54px)!important;
-}
-
 @media(max-width:900px){
   header.top .top-inner > a.logo-wrap{
     transform:translateX(-18px)!important;
@@ -4383,10 +4379,10 @@ header.top .top-inner > a.logo-wrap{
   }
 
   header.top .top-inner > a.logo-wrap,
-  .logo-wrap{
-    transform:none!important;
-    max-width:210px!important;
-  }
+.logo-wrap{
+  transform:translateX(-120px)!important;
+  max-width:210px!important;
+}
 
   .logo-img{
     max-width:200px!important;
