@@ -7350,7 +7350,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("click", function(e) {
-    const link = e.target.closest('a[href*="ordinionline.valoresalute.it"]');
+    const link = e.target.closest('.vs-warning-link');
     if (!link) return;
 
     e.preventDefault();
