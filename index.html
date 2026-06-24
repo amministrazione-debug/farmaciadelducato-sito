@@ -7150,35 +7150,37 @@ document.addEventListener('DOMContentLoaded', function(){
   <strong style="font-size:18px;">Gestione cookie</strong>
   <p style="margin:10px 0 16px; line-height:1.5;">
   Utilizziamo cookie tecnici necessari al funzionamento del sito e, previo consenso,
-  cookie analitici di Google Analytics. Alcuni collegamenti possono reindirizzare a
-  servizi gestiti da soggetti terzi, disciplinati dalle rispettive informative privacy e cookie policy.
-  Consulta la
-  <a href="#" data-modal-open="modalPrivacy" style="color:#00499b;font-weight:900;text-decoration:underline;">
-    Privacy Policy
-  </a>.
+  cookie analitici di Google Analytics. Puoi accettare o rifiutare i cookie analitici.
 </p>
 
-  <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <button id="accept-cookies" style="
-      background:#00499B;
-      color:white;
-      border:none;
-      padding:10px 18px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:bold;
-    ">Accetta</button>
+<div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+  <button id="accept-cookies" style="
+    background:#00499B;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+  ">Accetta</button>
 
-    <button id="reject-cookies" style="
-      background:#D0DAE5;
-      color:#263342;
-      border:none;
-      padding:10px 18px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:bold;
-    ">Rifiuta</button>
-  </div>
+  <button id="reject-cookies" style="
+    background:#D0DAE5;
+    color:#263342;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+  ">Rifiuta</button>
+
+  <a href="#" data-modal-open="modalPrivacy" style="
+    color:#00499B;
+    font-weight:900;
+    text-decoration:underline;
+    padding:10px 4px;
+  ">Privacy Policy</a>
+</div>
 </div>
 
 <script>
