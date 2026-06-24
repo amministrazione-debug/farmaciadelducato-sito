@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="it">
 <head>
+  <!-- Google tag + Consent Mode -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPPHGLXPM9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-ZPPHGLXPM9');
+</script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPPHGLXPM9"></script>
 <script>
@@ -6964,6 +6979,88 @@ document.addEventListener('DOMContentLoaded', function(){
     <a class="service-sheet-cta" href="https://wa.me/390521676298" target="_blank" rel="noopener">Richiedi informazioni</a>
   </div>
 </div>
+  <!-- Banner Cookie -->
+<div id="cookie-banner" style="
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  color: #263342;
+  border: 1px solid #D0DAE5;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  padding: 20px;
+  z-index: 99999;
+  font-family: Arial, Helvetica, sans-serif;
+  display: none;
+">
+  <strong style="font-size:18px;">Gestione cookie</strong>
+  <p style="margin:10px 0 16px; line-height:1.5;">
+    Utilizziamo cookie tecnici necessari al funzionamento del sito e, previo consenso,
+    cookie analitici di Google Analytics per comprendere in forma aggregata l’utilizzo del sito.
+  </p>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <button id="accept-cookies" style="
+      background:#00499B;
+      color:white;
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+    ">Accetta</button>
+
+    <button id="reject-cookies" style="
+      background:#D0DAE5;
+      color:#263342;
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+    ">Rifiuta</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
+
+    const consent = localStorage.getItem("cookieConsent");
+
+    if (!consent) {
+      banner.style.display = "block";
+    }
+
+    if (consent === "accepted") {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+
+    acceptBtn.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "accepted");
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+      banner.style.display = "none";
+    });
+
+    rejectBtn.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "rejected");
+      gtag('consent', 'update', {
+        'analytics_storage': 'denied'
+      });
+      banner.style.display = "none";
+    });
+  });
+</script>
 
 </body>
 </html>
