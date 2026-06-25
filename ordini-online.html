@@ -13,170 +13,435 @@
   <style>
     :root{
       --blue:#00499B;
+      --blue-dark:#003A86;
       --green:#39A935;
+      --lime:#B7DE32;
       --text:#263342;
       --muted:#5D6A78;
       --line:#D0DAE5;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:Arial,Helvetica,sans-serif;
-      background:linear-gradient(135deg,#F5FAFE,#FFFFFF);
+      background:#fff;
       color:var(--text);
     }
-    .top{
-      background:white;
-      border-bottom:1px solid #E4ECF3;
-      padding:22px 20px;
-    }
-    .top-inner{
-      max-width:1180px;
+
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(1320px,calc(100% - 28px));
       margin:0 auto;
+    }
+
+    .top{
+      background:#fff;
+      padding:24px 0;
+      border-bottom:1px solid #E4ECF3;
+    }
+
+    .top-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:28px;
     }
+
     .logo{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       font-weight:900;
-      color:var(--blue);
-      font-size:28px;
-      line-height:.9;
       text-transform:uppercase;
+      color:var(--blue);
+      font-size:31px;
+      line-height:.9;
+      letter-spacing:-1px;
     }
+
     .logo span{
       display:block;
       color:var(--green);
-      margin-top:7px;
+      margin-top:8px;
     }
+
     .logo-mark{
-      width:44px;
-      height:44px;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--blue),var(--green));
+      width:54px;
+      height:54px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#00499B,#39A935);
+      position:relative;
+      box-shadow:0 12px 26px rgba(0,74,152,.18);
     }
-    .back{
+
+    .logo-mark:before,
+    .logo-mark:after{
+      content:"";
+      position:absolute;
+      background:white;
+      border-radius:3px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+
+    .logo-mark:before{width:30px;height:9px}
+    .logo-mark:after{width:9px;height:30px}
+
+    .top-info{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:14px;
       color:var(--blue);
       font-weight:900;
-      text-decoration:none;
-      font-size:14px;
     }
-    .hero{
-      min-height:calc(100vh - 92px);
+
+    .top-info small{
+      display:block;
+      color:#67798D;
+      font-size:12px;
+      font-weight:700;
+      margin-top:3px;
+    }
+
+    .wa-btn{
+      background:linear-gradient(#44BB43,#2FA936);
+      color:white;
+      border-radius:999px;
+      padding:14px 24px;
+      font-weight:900;
+      box-shadow:0 10px 22px rgba(57,169,53,.25);
+      white-space:nowrap;
+    }
+
+    .nav{
+      background:linear-gradient(#004DA7,#003C8C);
+      color:white;
+      box-shadow:0 6px 18px rgba(0,0,0,.14);
+    }
+
+    .nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:46px 20px;
+      gap:56px;
+      min-height:58px;
+      font-size:14px;
+      font-weight:900;
+      text-transform:uppercase;
     }
-    .card{
-      width:min(760px,100%);
+
+    .nav a:hover{color:var(--lime)}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,#F5FAFE 0%,#FFFFFF 52%,#EEF8EB 100%);
+      padding:58px 0 78px;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      right:-160px;
+      top:-180px;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      background:rgba(57,169,53,.10);
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      left:-180px;
+      bottom:-220px;
+      width:620px;
+      height:620px;
+      border-radius:50%;
+      background:rgba(0,73,155,.08);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:46px;
+      align-items:center;
+    }
+
+    .copy h1{
+      margin:0;
+      color:var(--blue);
+      font-size:58px;
+      line-height:.95;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:-2.5px;
+    }
+
+    .copy h1 span{
+      display:block;
+      color:var(--green);
+      margin-top:8px;
+    }
+
+    .copy h2{
+      color:var(--blue);
+      font-size:28px;
+      line-height:1.25;
+      margin:24px 0 0;
+      font-weight:900;
+    }
+
+    .copy p{
+      color:#536273;
+      font-size:18px;
+      line-height:1.65;
+      margin:18px 0 0;
+      max-width:600px;
+    }
+
+    .notice-card{
       background:white;
-      border:1px solid var(--line);
+      border:1px solid #D0DAE5;
       border-radius:30px;
       box-shadow:0 28px 80px rgba(0,74,152,.15);
-      padding:44px;
+      padding:38px;
       text-align:center;
+      position:relative;
+      overflow:hidden;
     }
+
+    .notice-card:before{
+      content:"";
+      position:absolute;
+      right:-70px;
+      top:-70px;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:rgba(57,169,53,.10);
+    }
+
+    .notice-content{
+      position:relative;
+      z-index:2;
+    }
+
     .icon{
-      width:76px;
-      height:76px;
+      width:78px;
+      height:78px;
       border-radius:999px;
       border:3px solid var(--green);
       color:var(--green);
       display:grid;
       place-items:center;
       margin:0 auto 22px;
-      font-size:34px;
-      font-weight:900;
     }
-    h1{
+
+    .icon svg{
+      width:38px;
+      height:38px;
+      stroke:currentColor;
+      stroke-width:2.2;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .notice-card h3{
       margin:0;
       color:var(--blue);
-      font-size:42px;
+      font-size:34px;
       line-height:1.05;
       font-weight:900;
-      letter-spacing:-1.5px;
       text-transform:uppercase;
     }
-    h1 span{
+
+    .notice-card h3 span{
       display:block;
       color:var(--green);
-      margin-top:8px;
+      margin-top:6px;
     }
-    p{
+
+    .notice-card p{
       color:var(--muted);
-      font-size:19px;
-      line-height:1.6;
-      margin:20px auto 0;
-      max-width:620px;
+      font-size:18px;
+      line-height:1.55;
+      margin:18px auto 0;
+      max-width:520px;
     }
+
     .keyword-box{
-      margin:26px auto;
+      margin:24px auto;
       padding:20px;
-      border-radius:20px;
+      border-radius:22px;
       background:#EEF8EB;
       border:1px solid rgba(57,169,53,.25);
     }
+
     .keyword-box small{
       display:block;
       color:var(--text);
-      font-size:18px;
+      font-size:17px;
       margin-bottom:8px;
+      font-weight:800;
     }
+
     .keyword{
       color:var(--green);
       font-size:42px;
       font-weight:900;
       letter-spacing:1px;
     }
-    .benefits{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-      margin:28px 0;
-      text-align:center;
-    }
-    .benefit{
-      background:#F5FAFE;
-      border:1px solid #E4ECF3;
-      border-radius:18px;
-      padding:16px 12px;
-      color:var(--blue);
-      font-weight:900;
-      font-size:14px;
-      line-height:1.35;
-    }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      gap:10px;
       background:linear-gradient(#44BB43,#2FA936);
       color:white;
-      border:0;
       border-radius:999px;
-      padding:17px 38px;
+      padding:18px 40px;
       font-size:17px;
       font-weight:900;
-      text-decoration:none;
-      box-shadow:0 14px 28px rgba(57,169,53,.28);
-      margin-top:8px;
+      box-shadow:0 14px 30px rgba(57,169,53,.30);
+      margin-top:10px;
+      transition:.2s ease;
     }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 36px rgba(57,169,53,.36);
+    }
+
     .note{
-      font-size:13px;
-      color:#6b7a8c;
-      margin-top:18px;
+      font-size:13px!important;
+      color:#6b7a8c!important;
+      margin-top:16px!important;
     }
-    @media(max-width:720px){
+
+    .benefit-strip{
+      background:linear-gradient(180deg,#004FA7,#003A88);
+      color:white;
+      padding:24px 0;
+    }
+
+    .benefit-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .benefit{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      font-weight:900;
+      font-size:15px;
+      line-height:1.35;
+    }
+
+    .benefit span{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      border:2px solid rgba(255,255,255,.5);
+      display:grid;
+      place-items:center;
+      color:#B7DE32;
+      flex:0 0 auto;
+      font-size:22px;
+    }
+
+    .info-section{
+      padding:54px 0;
+      background:white;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .info-card{
+      background:#F8FCFF;
+      border:1px solid #E4ECF3;
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 16px 38px rgba(0,74,152,.08);
+    }
+
+    .info-card h4{
+      margin:0 0 10px;
+      color:var(--blue);
+      font-size:20px;
+      font-weight:900;
+    }
+
+    .info-card p{
+      margin:0;
+      color:#5a6a7a;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    footer{
+      background:#ffffff;
+      border-top:1px solid #E4ECF3;
+      padding:28px 0;
+      color:#405466;
+      font-size:14px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer-inner strong{
+      color:var(--blue);
+      display:block;
+      font-size:16px;
+    }
+
+    @media(max-width:980px){
       .top-inner{display:block;text-align:center}
-      .logo{justify-content:center;margin-bottom:14px;font-size:24px}
-      .card{padding:30px 22px;border-radius:24px}
-      h1{font-size:32px}
+      .logo{justify-content:center;margin-bottom:18px}
+      .top-info{justify-content:center;flex-wrap:wrap}
+      .nav{display:none}
+      .hero-inner{grid-template-columns:1fr}
+      .copy{text-align:center}
+      .copy h1{font-size:44px}
+      .benefit-grid{grid-template-columns:1fr 1fr}
+      .info-grid{grid-template-columns:1fr}
+    }
+
+    @media(max-width:640px){
+      .top-info{display:none}
+      .hero{padding:36px 0 52px}
+      .copy h1{font-size:38px}
+      .copy h2{font-size:22px}
+      .notice-card{padding:28px 20px;border-radius:24px}
+      .notice-card h3{font-size:28px}
       .keyword{font-size:34px}
-      .benefits{grid-template-columns:1fr}
+      .btn{width:100%;padding:17px 20px}
+      .benefit-grid{grid-template-columns:1fr}
+      .footer-inner{display:block;text-align:center}
     }
   </style>
 </head>
@@ -184,49 +449,115 @@
 <body>
 
 <header class="top">
-  <div class="top-inner">
-    <div class="logo">
+  <div class="container top-inner">
+    <a class="logo" href="index.html">
       <div class="logo-mark"></div>
       <div>Farmacia <span>del Ducato</span></div>
+    </a>
+
+    <div class="top-info">
+      <a class="wa-btn" href="https://wa.me/390521676298" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+      <div>Via Parigi 19/B <small>Parma</small></div>
+      <div>0521 676298 <small>Chiama direttamente</small></div>
+      <div>info@farmaciadelducato.com <small>Scrivi una email</small></div>
     </div>
-    <a class="back" href="index.html">Torna al sito</a>
   </div>
 </header>
 
+<nav class="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#chi-siamo">Chi siamo</a></li>
+    <li><a href="index.html#servizi-rapidi">Servizi</a></li>
+    <li><a href="index.html#carta-extra">Carta Extra</a></li>
+    <li><a href="index.html#dove-siamo">Dove siamo</a></li>
+    <li><a href="index.html#contatti">Contatti</a></li>
+  </ul>
+</nav>
+
 <main class="hero">
-  <section class="card">
-    <div class="icon">🛒</div>
+  <div class="container hero-inner">
 
-    <h1>Prima di continuare <span>componi il tuo ordine</span></h1>
+    <section class="copy">
+      <h1>Ordina online <span>con Farmacia del Ducato</span></h1>
+      <h2>Componi il tuo ordine sulla piattaforma Valore Salute.</h2>
+      <p>
+        Puoi selezionare i prodotti di cui hai bisogno e completare la richiesta online.
+        Al termine ricordati di cercare <strong>DEL DUCATO</strong>, così potremo prendere in carico il tuo ordine.
+      </p>
+    </section>
 
-    <p>
-      Componi il tuo ordine sulla piattaforma Valore Salute.
-    </p>
+    <section class="notice-card">
+      <div class="notice-content">
+        <div class="icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+          </svg>
+        </div>
 
-    <div class="keyword-box">
-      <small>Al termine, cerca:</small>
-      <div class="keyword">DEL DUCATO</div>
-    </div>
+        <h3>Prima di continuare <span>componi il tuo ordine</span></h3>
 
-    <p>
-      Così potremo prendere in carico il tuo ordine.
-    </p>
+        <p>Al termine, cerca:</p>
 
-    <div class="benefits">
-      <div class="benefit">Ritiro in farmacia</div>
-      <div class="benefit">Assistenza del farmacista</div>
-      <div class="benefit">Ordine più rapido</div>
-    </div>
+        <div class="keyword-box">
+          <small>Farmacia di fiducia</small>
+          <div class="keyword">DEL DUCATO</div>
+        </div>
 
-    <a class="btn" href="https://ordinionline.valoresalute.it/" target="_blank" rel="noopener">
-      CONTINUA SU VALORE SALUTE
-    </a>
+        <p>Così potremo prendere in carico il tuo ordine.</p>
 
-    <div class="note">
-      Verrai reindirizzato alla piattaforma esterna Ordini Online Valore Salute.
-    </div>
-  </section>
+        <a class="btn" href="https://ordinionline.valoresalute.it/" target="_blank" rel="noopener">
+          CONTINUA SU VALORE SALUTE →
+        </a>
+
+        <p class="note">Verrai reindirizzato alla piattaforma esterna Ordini Online Valore Salute.</p>
+      </div>
+    </section>
+
+  </div>
 </main>
+
+<section class="benefit-strip">
+  <div class="container benefit-grid">
+    <div class="benefit"><span>✓</span> Ritiro presso Farmacia del Ducato</div>
+    <div class="benefit"><span>✓</span> Assistenza del farmacista</div>
+    <div class="benefit"><span>✓</span> Ordine comodo da casa</div>
+    <div class="benefit"><span>✓</span> Parcheggio facile per il ritiro</div>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="container info-grid">
+    <div class="info-card">
+      <h4>Come funziona</h4>
+      <p>Entri nella piattaforma Valore Salute, componi l’ordine e al termine cerchi “DEL DUCATO”.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>Perché cercare DEL DUCATO</h4>
+      <p>Serve ad associare correttamente la richiesta alla nostra farmacia, così possiamo prenderla in carico.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>Hai bisogno di aiuto?</h4>
+      <p>Contattaci prima di completare l’operazione: ti aiutiamo a scegliere il percorso più adatto.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong>Farmacia del Ducato</strong>
+      Via Parigi 19/B · Parma
+    </div>
+    <div>
+      info@farmaciadelducato.com · 0521 676298
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
